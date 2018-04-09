@@ -95,7 +95,7 @@ Asteroid.Spawn = function (x, y) {
   asteroid.pos = createVector(x, y);
   asteroid.vel = createVector(100, 0).rotate(random(360));
   asteroid.ang_vel = random(PI * 2);
-  entities.push(asteroid);
+  entities.add(asteroid);
   return asteroid;
 };
 
@@ -138,7 +138,7 @@ function Ship() {
 Ship.Spawn = function () {
   let ship = new Ship();
   ship.pos = createVector(width / 2, height / 2);
-  entities.push(ship);
+  entities.add(ship);
   return ship;
 };
 
@@ -163,13 +163,13 @@ Bullet.Spawn = function (ship) {
   let bullet = new Bullet();
   bullet.pos = ship.pos.copy();
   bullet.vel = createVector(150, 0).rotate(ship.angle);
-  entities.push(bullet);
+  entities.add(bullet);
   return bullet;
 };
 
 // main
 
-const entities = [];
+const entities = new Set();
 let ship;
 
 function setup() {
