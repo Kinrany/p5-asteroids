@@ -88,8 +88,6 @@ function Asteroid() {
     fill("grey");
     ellipse(0, 0, 30, 50);
   };
-
-  this.sprite = createSprite(0, 0, 0, 0);
 }
 
 Asteroid.Spawn = function (x, y) {
