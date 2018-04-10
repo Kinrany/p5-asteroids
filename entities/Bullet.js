@@ -1,9 +1,9 @@
 function Bullet() {
   Impulse.call(this);
 
-  this.update = Delta(function (dt) {
+  this.update = function (dt) {
     this.updatePosition(dt);
-  });
+  };
 
   this.draw = function () {
     Relative(this.pos.x, this.pos.y, 0, this.shape);

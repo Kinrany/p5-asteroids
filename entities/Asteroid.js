@@ -4,10 +4,10 @@ function Asteroid() {
   this.angle = 0;
   this.ang_vel = 0;
 
-  this.update = Delta(function (dt) {
+  this.update = function (dt) {
     this.updatePosition(dt);
     this.angle += this.ang_vel * dt;
-  });
+  };
 
   this.draw = function () {
     Relative(this.pos.x, this.pos.y, this.angle, this.shape);

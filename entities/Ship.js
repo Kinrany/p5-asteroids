@@ -3,22 +3,9 @@ function Ship() {
 
   this.angle = 0;
 
-  this.update = Delta(function (dt) {
+  this.update = function (dt) {
     this.updatePosition(dt);
-
-    if (keyIsDown(TURN_RIGHT)) {
-      this.angle += 3 * dt;
-    }
-    if (keyIsDown(TURN_LEFT)) {
-      this.angle -= 3 * dt;
-    }
-    if (keyIsDown(THRUST)) {
-      let force = createVector(100, 0)
-        .rotate(this.angle)
-        .mult(dt);
-      this.vel.add(force);
-    }
-  });
+  };
 
   this.draw = function () {
     Relative(this.pos.x, this.pos.y, this.angle, this.shape);

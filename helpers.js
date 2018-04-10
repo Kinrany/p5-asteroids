@@ -1,17 +1,3 @@
-// replaces a function that takes current time
-// into a function that takes delta time
-function Delta(f) {
-  let last_update;
-  return function (current_update) {
-    if (last_update === undefined) {
-      last_update = current_update;
-    }
-    let dt = current_update - last_update;
-    last_update = current_update;
-    return f.call(this, dt);
-  };
-}
-
 // imitates toroidal space
 function WrapAroundTheScreen(offset = 0) {
   if (this.pos.x < -offset) {
