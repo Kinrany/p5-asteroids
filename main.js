@@ -8,26 +8,21 @@ function setup() {
   ship = Ship.Spawn();
 }
 
-function draw() {
-  background(32);
-
+function update() {
   for (let e of entities) {
     e.update(millis() / 1000);
   }
+}
+
+function draw() {
+  update();
+
+  background(32);
+
   for (let e of entities) {
     e.draw();
   }
 
   fill("white");
   text("Управление -- WASD + мышь", 10, 20);
-}
-
-function mouseClicked() {
-  Asteroid.Spawn(mouseX, mouseY);
-}
-
-function keyPressed() {
-  if (keyCode == SHOOT) {
-    Bullet.Spawn(ship);
-  }
 }
