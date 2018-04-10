@@ -1,5 +1,5 @@
 function Ship() {
-  Impulse.call(this);
+  Impulse.call(this, 10);
 
   this.angle = 0;
 
