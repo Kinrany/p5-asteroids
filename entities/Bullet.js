@@ -1,5 +1,5 @@
 function Bullet() {
-  Velocity.call(this);
+  Impulse.call(this);
 
   this.update = Delta(function (dt) {
     this.updatePosition(dt);

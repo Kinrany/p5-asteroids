@@ -1,10 +1,12 @@
 function Asteroid() {
-  Velocity.call(this, 30);
-  AngularVelocity.call(this);
+  Impulse.call(this, 30);
+  
+  this.angle = 0;
+  this.ang_vel = 0;
 
   this.update = Delta(function (dt) {
     this.updatePosition(dt);
-    this.updateAngle(dt);
+    this.angle += this.ang_vel * dt;
   });
 
   this.draw = function () {

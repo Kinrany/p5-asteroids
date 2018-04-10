@@ -1,6 +1,7 @@
 function Ship() {
-  Velocity.call(this);
-  Angle.call(this);
+  Impulse.call(this);
+
+  this.angle = 0;
 
   this.update = Delta(function (dt) {
     this.updatePosition(dt);

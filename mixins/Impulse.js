@@ -1,4 +1,4 @@
-function Velocity(screenWrapOffset = 0) {
+function Impulse(screenWrapOffset = 0) {
   this.pos = createVector(0, 0);
   this.vel = createVector(0, 0);
 
