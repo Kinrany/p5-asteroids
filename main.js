@@ -1,7 +1,7 @@
 "use strict";
 
 function entities() {
-  return [ship].concat(Asteroid.asteroids, Bullet.bullets, Explosion.explosions);
+  return [Ship.ship].concat(Asteroid.asteroids, Bullet.bullets, Explosion.explosions);
 }
 
 function setup() {
@@ -33,5 +33,6 @@ function draw() {
   }
 
   fill("white");
-  text("Управление -- WASD + мышь", 10, 20);
+  textSize(20);
+  text("Управление -- WASD", 10, 20);
 }

@@ -8,8 +8,8 @@ function Ship() {
     this.updatePosition(dt);
 
     if (this.thrust_on) {
-      ship.vel.add(createVector(100, 0)
-        .rotate(ship.angle).mult(dt));
+      this.vel.add(createVector(100, 0)
+        .rotate(this.angle).mult(dt));
     }
   };
 
@@ -28,11 +28,11 @@ function Ship() {
   };
 }
 
-let ship;
+Ship.ship = null;
 
 Ship.Spawn = function () {
-  let s = new Ship();
-  s.pos = createVector(width / 2, height / 2);
-  ship = s;
-  return s;
+  let ship = new Ship();
+  ship.pos = createVector(width / 2, height / 2);
+  Ship.ship = ship;
+  return ship;
 };

@@ -5,21 +5,17 @@ const TURN_RIGHT = 68; // D
 
 function updateControls(dt) {
   if (keyIsDown(TURN_RIGHT)) {
-    ship.angle += 3 * dt;
+    Ship.ship.angle += 3 * dt;
   }
   if (keyIsDown(TURN_LEFT)) {
-    ship.angle -= 3 * dt;
+    Ship.ship.angle -= 3 * dt;
   }
-  ship.thrust_on = keyIsDown(THRUST);
+  Ship.ship.thrust_on = keyIsDown(THRUST);
 }
 
 function keyPressed() {
   switch (keyCode) {
     case SHOOT:
-      Bullet.Spawn(ship);
+      Bullet.Spawn(Ship.ship);
   }
-}
-
-function mouseClicked() {
-  
 }
