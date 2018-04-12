@@ -1,7 +1,7 @@
 "use strict";
 
 function entities() {
-  return [ship].concat(asteroids, bullets);
+  return [ship].concat(Asteroid.asteroids, Bullet.bullets);
 }
 
 function setup() {
@@ -24,7 +24,7 @@ function update() {
     e.update(dt);
   }
 
-  let _ = { bullets, asteroids } = bulletsKillAsteroids(bullets, asteroids);
+  bulletsKillAsteroids();
 }
 
 function draw() {

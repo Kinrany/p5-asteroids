@@ -17,12 +17,12 @@ function Bullet() {
   };
 }
 
-let bullets = [];
+Bullet.bullets = [];
 
 Bullet.Spawn = function (ship) {
   let bullet = new Bullet();
   bullet.pos = ship.pos.copy();
   bullet.vel = createVector(150, 0).rotate(ship.angle);
-  bullets.push(bullet);
+  Bullet.bullets.push(bullet);
   return bullet;
 };
