@@ -3,6 +3,22 @@ function Ship() {
 
   this.angle = 0;
   this.thrust_on = false;
+  this.last_reload = 0;
+
+  this.shoot = function() {
+    if (time() - Ship.ship.last_reload > 0.15) {
+      this.last_reload = time();
+      Bullet.Spawn(this);
+    }
+  }
+
+  this.turn_right = function(dt) {
+    this.angle += 3 * dt;
+  }
+
+  this.turn_left = function(dt) {
+    this.angle -= 3 * dt;
+  }
 
   this.update = function (dt) {
     this.updatePosition(dt);

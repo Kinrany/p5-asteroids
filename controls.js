@@ -1,21 +1,31 @@
-const THRUST = 87;     // W
-const TURN_LEFT = 65;  // A
-const SHOOT = 83;      // S
-const TURN_RIGHT = 68; // D
-
-function updateControls(dt) {
-  if (keyIsDown(TURN_RIGHT)) {
-    Ship.ship.angle += 3 * dt;
-  }
-  if (keyIsDown(TURN_LEFT)) {
-    Ship.ship.angle -= 3 * dt;
-  }
-  Ship.ship.thrust_on = keyIsDown(THRUST);
+function thrust() {
+  return keyIsDown(87); // W
 }
 
-function keyPressed() {
-  switch (keyCode) {
-    case SHOOT:
-      Bullet.Spawn(Ship.ship);
+function turn_left() {
+  return keyIsDown(65); // A
+}
+
+function turn_right() {
+  return keyIsDown(68); // D
+}
+
+function shoot() {
+  return keyIsDown(83); // S
+}
+
+function updateControls(dt) {
+  Ship.ship.thrust_on = thrust();
+
+  if (turn_right()) {
+    Ship.ship.turn_right(dt);
+  }
+  
+  if (turn_left()) {
+    Ship.ship.turn_left(dt);
+  }
+
+  if (shoot()) {
+    Ship.ship.shoot();
   }
 }
