@@ -21,5 +21,5 @@ function keyPressed() {
 }
 
 function mouseClicked() {
-  Asteroid.Spawn(mouseX, mouseY);
+  
 }

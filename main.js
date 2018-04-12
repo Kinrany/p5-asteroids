@@ -18,6 +18,7 @@ function update() {
     e.update(dt);
   }
   
+  asteroidsSpawn();
   bulletsExplode();
   explosionsKillAsteroids();
 }
