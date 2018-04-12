@@ -14,18 +14,16 @@ function Ship() {
   };
 
   this.draw = function () {
-    push();
-    translate(this.pos.x, this.pos.y);
-    rotate(this.angle);
-
-    fill("blue");
-    triangle(20, 0, -10, -10, -10, 10);
-
-    if (this.thrust_on) {
-      fill("yellow");
-      triangle(-20, 0, -10, -5, -10, 5);
+    pushRelative(this.pos.x, this.pos.y, this.angle);
+    {
+      fill("blue");
+      triangle(20, 0, -10, -10, -10, 10);
+  
+      if (this.thrust_on) {
+        fill("yellow");
+        triangle(-20, 0, -10, -5, -10, 5);
+      }
     }
-
     pop();
   };
 }

@@ -6,12 +6,12 @@ function Bullet() {
   };
 
   this.draw = function () {
-    Relative(this.pos.x, this.pos.y, 0, this.shape);
-  };
-
-  this.shape = function () {
-    fill("yellow");
-    ellipse(0, 0, 10, 10);
+    pushRelative(this.pos.x, this.pos.y, 0);
+    {
+      fill("yellow");
+      ellipse(0, 0, 10, 10);
+    }
+    pop();
   };
 }
 

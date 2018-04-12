@@ -10,12 +10,12 @@ function Asteroid() {
   };
 
   this.draw = function () {
-    Relative(this.pos.x, this.pos.y, this.angle, this.shape);
-  };
-
-  this.shape = function () {
-    fill("grey");
-    ellipse(0, 0, 30, 50);
+    pushRelative(this.pos.x, this.pos.y, this.angle);
+    {
+      fill("grey");
+      ellipse(0, 0, 30, 50);
+    }
+    pop();
   };
 }
 

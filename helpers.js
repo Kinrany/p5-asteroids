@@ -12,12 +12,8 @@ function WrapAroundTheScreen(offset = 0) {
   }
 }
 
-// executes the function in another p5 coordinate system
-function Relative(x, y, angle, f) {
+function pushRelative(x, y, angle) {
   push();
   translate(x, y);
   rotate(angle);
-  let result = f.call(this);
-  pop();
-  return result;
 }
