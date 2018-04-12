@@ -1,7 +1,7 @@
 "use strict";
 
 function entities() {
-  return [ship].concat(Asteroid.asteroids, Bullet.bullets);
+  return [ship].concat(Asteroid.asteroids, Bullet.bullets, Explosion.explosions);
 }
 
 function setup() {
@@ -10,7 +10,7 @@ function setup() {
 }
 
 function update() {
-  const dt = getDeltaTime();
+  const dt = deltaTime();
 
   updateControls(dt);
 

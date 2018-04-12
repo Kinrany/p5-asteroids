@@ -36,10 +36,15 @@ function getCollisions(arr1, arr2) {
   return collisions;
 }
 
+// returns time in seconds since the beginning
+function time() {
+  return millis() / 1000;
+}
+
 // returns time in seconds since last call
 let last_update;
-function getDeltaTime() {
-  let current_update = millis() / 1000;
+function deltaTime() {
+  let current_update = time();
   if (last_update === undefined) {
     last_update = current_update;
   }
