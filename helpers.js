@@ -52,3 +52,27 @@ function deltaTime() {
   last_update = current_update;
   return dt;
 }
+
+function Stopwatch() {
+  this.start_time = null;
+  this.stop_time = null;
+
+  this.start = function() {
+    this.start_time = time();
+    this.stop_time = null;
+  }
+
+  this.stop = function() {
+    this.stop_time = time();
+  }
+
+  this.elapsed = function() {
+    console.assert(this.start !== null);
+    if (this.stop_time) {
+      return this.stop_time - this.start_time;
+    }
+    else {
+      return time() - this.start_time;
+    }
+  }
+}
