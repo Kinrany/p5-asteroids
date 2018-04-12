@@ -17,8 +17,9 @@ function update() {
   for (let e of entities()) {
     e.update(dt);
   }
-
-  bulletsKillAsteroids();
+  
+  bulletsExplode();
+  explosionsKillAsteroids();
 }
 
 function draw() {

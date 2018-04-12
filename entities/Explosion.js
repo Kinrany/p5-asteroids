@@ -2,6 +2,10 @@ function Explosion(lifespan) {
   Impulse.call(this);
 
   this.created_at = time();
+  
+  this.radius = function() {
+    return 10 + 20 * (this.time_passed() / lifespan);
+  }
 
   this.time_passed = function () {
     return time() - this.created_at;
@@ -23,7 +27,7 @@ function Explosion(lifespan) {
       const fade = this.time_left() / lifespan; // from 1 to 0
       fill(255, 255 * fade, 0, 255 * fade);
       stroke(0, 0, 0, 255 * fade);
-      const diameter = 60 - 20 * fade;
+      const diameter = this.radius() * 2;
       ellipse(0, 0, diameter, diameter);
     }
     pop();

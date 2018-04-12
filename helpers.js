@@ -26,7 +26,7 @@ function getCollisions(arr1, arr2) {
   for (let a1 of arr1) {
     for (let a2 of arr2) {
       let current_dist = dist(a1.pos.x, a1.pos.y, a2.pos.x, a2.pos.y);
-      let collision_dist = a1.radius + a2.radius;
+      let collision_dist = a1.radius() + a2.radius();
       if (current_dist < collision_dist) {
         collisions.push([a1, a2]);
       }
