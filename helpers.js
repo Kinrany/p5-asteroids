@@ -35,3 +35,15 @@ function getCollisions(arr1, arr2) {
 
   return collisions;
 }
+
+// returns time in seconds since last call
+let last_update;
+function getDeltaTime() {
+  let current_update = millis() / 1000;
+  if (last_update === undefined) {
+    last_update = current_update;
+  }
+  let dt = current_update - last_update;
+  last_update = current_update;
+  return dt;
+}

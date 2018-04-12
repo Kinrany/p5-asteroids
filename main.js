@@ -9,14 +9,8 @@ function setup() {
   Ship.Spawn();
 }
 
-let last_update;
 function update() {
-  let current_update = millis() / 1000;
-  if (last_update === undefined) {
-    last_update = current_update;
-  }
-  let dt = current_update - last_update;
-  last_update = current_update;
+  const dt = getDeltaTime();
 
   updateControls(dt);
 
