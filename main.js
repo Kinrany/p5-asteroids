@@ -23,6 +23,8 @@ function update() {
   for (let e of entities()) {
     e.update(dt);
   }
+
+  let _ = { bullets, asteroids } = bulletsKillAsteroids(bullets, asteroids);
 }
 
 function draw() {

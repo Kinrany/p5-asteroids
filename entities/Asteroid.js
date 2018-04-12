@@ -4,6 +4,8 @@ function Asteroid() {
   this.angle = 0;
   this.ang_vel = 0;
 
+  this.radius = 15;
+
   this.update = function (dt) {
     this.updatePosition(dt);
     this.angle += this.ang_vel * dt;
@@ -13,13 +15,13 @@ function Asteroid() {
     pushRelative(this.pos.x, this.pos.y, this.angle);
     {
       fill("grey");
-      ellipse(0, 0, 30, 50);
+      ellipse(0, 0, this.radius * 2, this.radius * 2 + 20);
     }
     pop();
   };
 }
 
-const asteroids = [];
+let asteroids = [];
 
 Asteroid.Spawn = function (x, y) {
   let asteroid = new Asteroid();
