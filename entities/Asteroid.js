@@ -4,7 +4,7 @@ function Asteroid() {
   this.angle = 0;
   this.ang_vel = 0;
 
-  this.radius = () => 15;
+  this.radius = () => 20;
 
   this.update = function (dt) {
     this.updatePosition(dt);
@@ -15,7 +15,7 @@ function Asteroid() {
     pushRelative(this.pos.x, this.pos.y, this.angle);
     {
       fill("grey");
-      ellipse(0, 0, this.radius() * 2, this.radius() * 2 + 20);
+      ellipse(0, 0, this.radius() * 2, this.radius() * 2 + 10);
     }
     pop();
   };
