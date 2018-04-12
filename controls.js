@@ -10,11 +10,7 @@ function updateControls(dt) {
   if (keyIsDown(TURN_LEFT)) {
     ship.angle -= 3 * dt;
   }
-  if (keyIsDown(THRUST)) {
-    let force = createVector(100, 0)
-      .rotate(ship.angle).mult(dt);
-    ship.vel.add(force);
-  }
+  ship.thrust_on = keyIsDown(THRUST);
 }
 
 function keyPressed() {

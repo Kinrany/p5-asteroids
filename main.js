@@ -1,11 +1,12 @@
 "use strict";
 
-const entities = new Set();
-let ship;
+function entities() {
+  return [ship].concat(asteroids, bullets);
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  ship = Ship.Spawn();
+  Ship.Spawn();
 }
 
 let last_update;
@@ -19,7 +20,7 @@ function update() {
 
   updateControls(dt);
 
-  for (let e of entities) {
+  for (let e of entities()) {
     e.update(dt);
   }
 }
@@ -29,7 +30,7 @@ function draw() {
 
   background(32);
 
-  for (let e of entities) {
+  for (let e of entities()) {
     e.draw();
   }
 

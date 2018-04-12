@@ -19,11 +19,13 @@ function Asteroid() {
   };
 }
 
+const asteroids = [];
+
 Asteroid.Spawn = function (x, y) {
   let asteroid = new Asteroid();
   asteroid.pos = createVector(x, y);
   asteroid.vel = createVector(100, 0).rotate(random(360));
   asteroid.ang_vel = random(PI * 2);
-  entities.add(asteroid);
+  asteroids.push(asteroid);
   return asteroid;
 };
